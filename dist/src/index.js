@@ -81,6 +81,7 @@ const networks = {
 class Client {
   constructor() {
     var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
     let agentOptions = _ref.agentOptions;
     var _ref$headers = _ref.headers;
     let headers = _ref$headers === undefined ? false : _ref$headers;
@@ -90,15 +91,15 @@ class Client {
     let logger = _ref$logger === undefined ? (0, _bunyan2.default)({ name: 'syscoin-core' }) : _ref$logger;
     var _ref$network = _ref.network;
     let network = _ref$network === undefined ? 'mainnet' : _ref$network,
-      password = _ref.password,
-      port = _ref.port;
+        password = _ref.password,
+        port = _ref.port;
     var _ref$ssl = _ref.ssl;
     let ssl = _ref$ssl === undefined ? false : _ref$ssl;
     var _ref$timeout = _ref.timeout;
     let timeout = _ref$timeout === undefined ? 30000 : _ref$timeout,
-      username = _ref.username,
-      version = _ref.version,
-      sysversion = _ref.sysversion;
+        username = _ref.username,
+        version = _ref.version,
+        sysversion = _ref.sysversion;
 
     if (!_lodash2.default.has(networks, network)) {
       throw new Error(`Invalid network name "${network}"`, { network: network });
@@ -122,12 +123,14 @@ class Client {
     if (version || sysversion) {
       unsupported = _lodash2.default.chain(_methods2.default).pickBy(method => {
         let pick = false;
+
         if (version) {
           pick = !_semver2.default.satisfies(version, method.version);
         }
         if (sysversion) {
           pick = !_semver2.default.satisfies(sysversion, method.sysversion);
         }
+
         return pick;
       }).keys().invokeMap(String.prototype.toLowerCase).value();
     }

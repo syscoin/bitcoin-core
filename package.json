@@ -1,6 +1,6 @@
 {
   "name": "syscoin-core",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "description": "A modern Syscoin Core REST and RPC client.",
   "keywords": [
     "syscoin",
