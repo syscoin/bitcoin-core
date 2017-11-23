@@ -48,7 +48,7 @@ class Client {
     agentOptions,
     headers = false,
     host = 'localhost',
-    logger = bunyan('syscoin-core'),
+    logger = bunyan({ name: 'syscoin-core' }),
     network = 'mainnet',
     password,
     port,

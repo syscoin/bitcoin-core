@@ -88,7 +88,7 @@ class Client {
     var _ref$host = _ref.host;
     let host = _ref$host === undefined ? 'localhost' : _ref$host;
     var _ref$logger = _ref.logger;
-    let logger = _ref$logger === undefined ? (0, _bunyan2.default)('syscoin-core') : _ref$logger;
+    let logger = _ref$logger === undefined ? (0, _bunyan2.default)({ name: 'syscoin-core' }) : _ref$logger;
     var _ref$network = _ref.network;
     let network = _ref$network === undefined ? 'mainnet' : _ref$network,
         password = _ref.password,
