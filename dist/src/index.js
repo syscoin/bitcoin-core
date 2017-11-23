@@ -201,7 +201,10 @@ class Client {
 
 
     return _bluebird2.default.try(() => {
-      return this.request.getAsync(`/rest/tx/${hash}.${extension}`).bind(this).then(this.parser.rest);
+      return this.request.getAsync({
+        encoding: extension === 'bin' ? null : undefined,
+        url: `/rest/tx/${hash}.${extension}`
+      }).bind(this).then(this.parser.rest);
     }).asCallback(callback);
   }
 
@@ -227,7 +230,10 @@ class Client {
 
 
     return _bluebird2.default.try(() => {
-      return this.request.getAsync(`/rest/block${summary ? '/notxdetails/' : '/'}${hash}.${extension}`).bind(this).then(this.parser.rest);
+      return this.request.getAsync({
+        encoding: extension === 'bin' ? null : undefined,
+        url: `/rest/block${summary ? '/notxdetails/' : '/'}${hash}.${extension}`
+      }).bind(this).then(this.parser.rest);
     }).asCallback(callback);
   }
 
@@ -254,7 +260,10 @@ class Client {
         throw new Error(`Extension "${extension}" is not supported`);
       }
 
-      return this.request.getAsync(`/rest/headers/${count}/${hash}.${extension}`).bind(this).then(this.parser.rest);
+      return this.request.getAsync({
+        encoding: extension === 'bin' ? null : undefined,
+        url: `/rest/headers/${count}/${hash}.${extension}`
+      }).bind(this).then(this.parser.rest);
     }).asCallback(callback);
   }
 
@@ -296,7 +305,10 @@ class Client {
       return `${outpoint.id}-${outpoint.index}`;
     }).join('/');
 
-    return this.request.getAsync(`/rest/getutxos/checkmempool/${sets}.${extension}`).bind(this).then(this.parser.rest).asCallback(callback);
+    return this.request.getAsync({
+      encoding: extension === 'bin' ? null : undefined,
+      url: `/rest/getutxos/checkmempool/${sets}.${extension}`
+    }).bind(this).then(this.parser.rest).asCallback(callback);
   }
 
   /**

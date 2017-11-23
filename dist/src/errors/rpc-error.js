@@ -21,7 +21,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  */
 
 class RpcError extends _standardError2.default {
-  constructor(code, msg, props) {
+  constructor(code, msg) {
+    let props = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+
     if (typeof code != 'number') {
       throw new TypeError(`Non-numeric HTTP code`);
     }
@@ -31,9 +33,9 @@ class RpcError extends _standardError2.default {
       msg = null;
     }
 
-    super(msg || _http.STATUS_CODES[code], props);
+    props.code = code;
 
-    this.code = code;
+    super(msg || _http.STATUS_CODES[code], props);
   }
 
   get status() {

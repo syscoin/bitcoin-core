@@ -5,11 +5,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.obfuscate = obfuscate;
 
+var _lodash = require('lodash');
+
 var _methods = require('../methods');
 
 var _methods2 = _interopRequireDefault(_methods);
-
-var _lodash = require('lodash');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
