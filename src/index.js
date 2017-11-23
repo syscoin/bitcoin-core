@@ -48,7 +48,7 @@ class Client {
     agentOptions,
     headers = false,
     host = 'localhost',
-    logger = bunyan('syscoin-core'),
+    logger = bunyan({ name: 'syscoin-core' }),
     network = 'mainnet',
     password,
     port,
@@ -81,12 +81,14 @@ class Client {
       unsupported = _.chain(methods)
         .pickBy(method => {
           let pick = false;
+
           if (version) {
             pick = !semver.satisfies(version, method.version);
           }
           if (sysversion) {
             pick = !semver.satisfies(sysversion, method.sysversion);
           }
+
           return pick;
         })
         .keys()
@@ -135,11 +137,9 @@ class Client {
         body: JSON.stringify(body),
         json: false,
         uri: '/'
-      })
-      .bind(this)
-      .then(this.parser.rpc);
-    })
-    .asCallback(callback);
+      }).bind(this)
+        .then(this.parser.rpc);
+    }).asCallback(callback);
   }
 
   /**
@@ -150,8 +150,10 @@ class Client {
     const [[hash, { extension = 'json' } = {}], callback] = source(...args);
 
     return Promise.try(() => {
-      return this.request.getAsync(`/rest/tx/${hash}.${extension}`)
-        .bind(this)
+      return this.request.getAsync({
+        encoding: extension === 'bin' ? null : undefined,
+        url: `/rest/tx/${hash}.${extension}`
+      }).bind(this)
         .then(this.parser.rest);
     }).asCallback(callback);
   }
@@ -166,8 +168,10 @@ class Client {
     const [[hash, { summary = false, extension = 'json' } = {}], callback] = source(...args);
 
     return Promise.try(() => {
-      return this.request.getAsync(`/rest/block${summary ? '/notxdetails/' : '/'}${hash}.${extension}`)
-        .bind(this)
+      return this.request.getAsync({
+        encoding: extension === 'bin' ? null : undefined,
+        url: `/rest/block${summary ? '/notxdetails/' : '/'}${hash}.${extension}`
+      }).bind(this)
         .then(this.parser.rest);
     }).asCallback(callback);
   }
@@ -184,8 +188,10 @@ class Client {
         throw new Error(`Extension "${extension}" is not supported`);
       }
 
-      return this.request.getAsync(`/rest/headers/${count}/${hash}.${extension}`)
-        .bind(this)
+      return this.request.getAsync({
+        encoding: extension === 'bin' ? null : undefined,
+        url: `/rest/headers/${count}/${hash}.${extension}`
+      }).bind(this)
         .then(this.parser.rest);
     }).asCallback(callback);
   }
@@ -217,8 +223,10 @@ class Client {
       return `${outpoint.id}-${outpoint.index}`;
     }).join('/');
 
-    return this.request.getAsync(`/rest/getutxos/checkmempool/${sets}.${extension}`)
-      .bind(this)
+    return this.request.getAsync({
+      encoding: extension === 'bin' ? null : undefined,
+      url: `/rest/getutxos/checkmempool/${sets}.${extension}`
+    }).bind(this)
       .then(this.parser.rest)
       .asCallback(callback);
   }

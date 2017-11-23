@@ -50,7 +50,7 @@ By default, when `ssl` is enabled, strict checking is implicitly enabled.
 const fs = require('fs');
 const client = new Client({
   agentOptions: {
-    ca: fs.readFileSync('/etc/ssl/syscoind/cert.pem')),
+    ca: fs.readFileSync('/etc/ssl/syscoind/cert.pem')
   },
   ssl: true
 });
@@ -346,7 +346,7 @@ const Client = require('syscoin-core');
 const fs = require('fs');
 const client = new Client({
   agentOptions: {
-    ca: fs.readFileSync('/etc/ssl/syscoind/cert.pem')),
+    ca: fs.readFileSync('/etc/ssl/syscoind/cert.pem')
   },
   port: 28332,
   ssl: true
@@ -355,7 +355,7 @@ const client = new Client({
 
 ## Logging
 
-By default, all requests made with `syscoin-core` are logged using [seegno/debugnyan](https://github.com/seegno/debugnyan) with `syscoin-core` as the logging namespace.
+By default, all requests made with `syscoin-core` are logged using [uphold/debugnyan](https://github.com/uphold/debugnyan) with `syscoin-core` as the logging namespace.
 
 Please note that all sensitive data is obfuscated before calling the logger.
 
@@ -420,5 +420,5 @@ MIT
 
 [npm-image]: https://img.shields.io/npm/v/bitcoin-core.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/syscoin-core
-[travis-image]: https://img.shields.io/travis/seegno/bitcoin-core.svg?style=flat-square
-[travis-url]: https://travis-ci.org/seegno/syscoin-core
+[travis-image]: https://img.shields.io/travis/ruimarinho/bitcoin-core.svg?style=flat-square
+[travis-url]: https://travis-ci.org/ruimarinho/syscoin-core

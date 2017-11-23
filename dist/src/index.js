@@ -88,7 +88,7 @@ class Client {
     var _ref$host = _ref.host;
     let host = _ref$host === undefined ? 'localhost' : _ref$host;
     var _ref$logger = _ref.logger;
-    let logger = _ref$logger === undefined ? (0, _bunyan2.default)('syscoin-core') : _ref$logger;
+    let logger = _ref$logger === undefined ? (0, _bunyan2.default)({ name: 'syscoin-core' }) : _ref$logger;
     var _ref$network = _ref.network;
     let network = _ref$network === undefined ? 'mainnet' : _ref$network,
         password = _ref.password,
@@ -123,12 +123,14 @@ class Client {
     if (version || sysversion) {
       unsupported = _lodash2.default.chain(_methods2.default).pickBy(method => {
         let pick = false;
+
         if (version) {
           pick = !_semver2.default.satisfies(version, method.version);
         }
         if (sysversion) {
           pick = !_semver2.default.satisfies(sysversion, method.sysversion);
         }
+
         return pick;
       }).keys().invokeMap(String.prototype.toLowerCase).value();
     }
@@ -201,7 +203,10 @@ class Client {
 
 
     return _bluebird2.default.try(() => {
-      return this.request.getAsync(`/rest/tx/${hash}.${extension}`).bind(this).then(this.parser.rest);
+      return this.request.getAsync({
+        encoding: extension === 'bin' ? null : undefined,
+        url: `/rest/tx/${hash}.${extension}`
+      }).bind(this).then(this.parser.rest);
     }).asCallback(callback);
   }
 
@@ -227,7 +232,10 @@ class Client {
 
 
     return _bluebird2.default.try(() => {
-      return this.request.getAsync(`/rest/block${summary ? '/notxdetails/' : '/'}${hash}.${extension}`).bind(this).then(this.parser.rest);
+      return this.request.getAsync({
+        encoding: extension === 'bin' ? null : undefined,
+        url: `/rest/block${summary ? '/notxdetails/' : '/'}${hash}.${extension}`
+      }).bind(this).then(this.parser.rest);
     }).asCallback(callback);
   }
 
@@ -254,7 +262,10 @@ class Client {
         throw new Error(`Extension "${extension}" is not supported`);
       }
 
-      return this.request.getAsync(`/rest/headers/${count}/${hash}.${extension}`).bind(this).then(this.parser.rest);
+      return this.request.getAsync({
+        encoding: extension === 'bin' ? null : undefined,
+        url: `/rest/headers/${count}/${hash}.${extension}`
+      }).bind(this).then(this.parser.rest);
     }).asCallback(callback);
   }
 
@@ -296,7 +307,10 @@ class Client {
       return `${outpoint.id}-${outpoint.index}`;
     }).join('/');
 
-    return this.request.getAsync(`/rest/getutxos/checkmempool/${sets}.${extension}`).bind(this).then(this.parser.rest).asCallback(callback);
+    return this.request.getAsync({
+      encoding: extension === 'bin' ? null : undefined,
+      url: `/rest/getutxos/checkmempool/${sets}.${extension}`
+    }).bind(this).then(this.parser.rest).asCallback(callback);
   }
 
   /**
