@@ -10,6 +10,15 @@ import { map, set } from 'lodash';
  * Export available rpc methods.
  */
 
+
+ /**
+ * @Dev
+ * Updating the methods:
+ * new : >= new_version
+ * changed: >= new_version
+ * deprecate < new_version
+ */
+
 export default {
     getBlock: { version: '>=2.2.0' },
     getBlockchainInfo: { version: '>=2.2.0' },
@@ -50,6 +59,7 @@ export default {
         version: '>==2.2.0'
     },
     dumpWallet: { version: '>==2.2.0' },
+    debug: { version: '>=3.0.0' },
     encryptWallet: {
         obfuscate: {
             request: params => set([...params], '[0]', '******')
@@ -70,10 +80,56 @@ export default {
     escrowNew: { version: '>=2.2.0' },
     escrowRefund: { version: '>=2.2.0' },
     escrowRelease: { version: '>=2.2.0' },
+    getaddressdeltas: { version: '>=3.0.0' },
     getAccount: { version: '>=2.2.0' },
     getAccountAddress: { version: '>=2.2.0' },
     getAddressBalance: { version: '>=2.2.0' },
     getAddressUtxos: { version: '>=2.2.0' },
+    getaddressmempool: { version: '>=3.0.0' },
+    getaddresstxids: { version: '>=3.0.0' },
+    getblockhashes: { version: '>=3.0.0' },
+    getblockheaders: { version: '>=3.0.0' },
+    getchaintips: { version: '>=3.0.0' },
+    getspentinfo: { version: '>=3.0.0' },
+    getgenerate: { version: '>=3.0.0' },
+    setgenerate: { version: '>=3.0.0' },
+    setnetworkactive: { version: '>=3.0.0' },
+    getgovernanceinfo: { version: '>=3.0.0' },
+    getpoolinfo: { version: '>=3.0.0' },
+    getsuperblockbudget: { version: '>=3.0.0' },
+    gobject: { version: '>=3.0.0' },
+    masternode: { version: '>=3.0.0' },
+    masternodebroadcast: { version: '>=3.0.0' },
+    masternodelist: { version: '>=3.0.0' },
+    mnsync: { version: '>=3.0.0' },
+    privatesend: { version: '>=3.0.0' },
+    sentinelping: { version: '>=3.0.0' },
+    spork: { version: '>=3.0.0' },
+    voteraw: { version: '>=3.0.0' },
+    assetallocationinfo: { version: '>=3.0.0' },
+    assetallocationsend: { version: '>=3.0.0' },
+    assetallocationsenderstatus: { version: '>=3.0.0' },
+    assetinfo: { version: '>=3.0.0' },
+    assetnew: { version: '>=3.0.0' },
+    assetsend: { version: '>=3.0.0' },
+    assettransfer: { version: '>=3.0.0' },
+    assetupdate: { version: '>=3.0.0' },
+    dumphdinfo: { version: '>=3.0.0' },
+    importelectrumwallet: { version: '>=3.0.0' },
+    instantsendtoaddress: { version: '>=3.0.0' },
+    keepass: { version: '>=3.0.0' },
+    getblocktemplate: { version: '>=3.0.0' },
+    fundrawtransaction: { version: '>=3.0.0' },
+    sendrawtransaction: { version: '>=3.0.0' },
+    listunspent: { version: '>=3.0.0' },
+    lockunspent: { version: '>=3.0.0' },
+    placement: { version: '>=3.0.0' },
+    placement: { version: '>=3.0.0' },
+    placement: { version: '>=3.0.0' },
+    placement: { version: '>=3.0.0' },
+    placement: { version: '>=3.0.0' },
+    placement: { version: '>=3.0.0' },
+    placement: { version: '>=3.0.0' },
     getBalance: { version: '>=2.2.0' },
     getWalletBalance: { version: '>=2.2.0' },
     getNewAddress: { version: '>=2.2.0' },
