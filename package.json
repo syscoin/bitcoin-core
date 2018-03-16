@@ -26,6 +26,7 @@
     "lint": "eslint src test",
     "prepublish": "npm run transpile",
     "test": "NODE_ENV=test mocha $npm_package_options_mocha",
+    "win-test": "set NODE_ENV=test && mocha --require babel-register",
     "testdocker": "docker-compose run --rm sut",
     "transpile": "rm -rf dist/* && babel src --out-dir dist/src",
     "version": "npm run changelog --future-release=$npm_package_version && npm run transpile && git add -A CHANGELOG.md dist"
