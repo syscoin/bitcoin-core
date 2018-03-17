@@ -215,6 +215,7 @@ exports.default = {
   stop: { version: '>=0.1.0' },
   submitBlock: { version: '>=0.7.0' },
   syscoinDecodeRawTransaction: { sysversion: '>=2.1.6' },
+  syscoinListReceivedByAddress: { version: '>=2.2.0' },
   syscoinSignRawTransaction: { sysversion: '>=2.1.6' },
   upTime: { version: '>=0.15.0' },
   validateAddress: { version: '>=0.3.14' },
