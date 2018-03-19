@@ -7,7 +7,7 @@ import { map, set } from 'lodash';
 
  /**
  * @Dev
- * follow the versioning rule below 
+ * follow the versioning rule below
  * to update changes:
  * *new : '>= new_version'
  * *changed: '>= new_version'
@@ -68,6 +68,7 @@ export default {
     verifyMessage: { version: '>=2.2.0' },
     syscoinSendRawTransaction: { version: '>=2.2.0' },
     syscoinDecodeRawTransaction: { version: '>=2.2.0' },
+    syscoinListReceivedByAddress: { version: '>=3.0.0'},
     syscoinQuery: { version: '>=2.2.0' },
     pruneSyscoinServices: { version: '>=2.2.0' },
     dumpPrivKey: {
