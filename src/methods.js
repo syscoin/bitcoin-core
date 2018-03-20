@@ -150,8 +150,9 @@ export default {
     sendMany: { version: '>=2.2.0' },
     sendToAddress: { version: '>=2.2.0' },
     signMessage: { version: '>=2.2.0' },
+    syscoinListReceiveByAddress: { version: '>=3.0.0' },
     validateAddress: { version: '>=2.2.0' },
-    voteraw: { version: '>=3.0.0' },
+    voteRaw: { version: '>=3.0.0' },
     walletLock: { version: '>=2.2.0' },
     walletPassphrase: {
         obfuscate: {
