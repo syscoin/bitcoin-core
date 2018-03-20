@@ -1,234 +1,172 @@
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 
 var _lodash = require('lodash');
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) arr2[i] = arr[i]; return arr2; } else { return Array.from(arr); } } /* eslint-disable no-inline-comments */
 
-/**
- * Module dependencies.
- */
 
 /**
  * Export available rpc methods.
  */
 
+/**
+* @Dev
+* follow the versioning rule below
+* to update changes:
+* *new : '>= new_version'
+* *changed: '>= new_version'
+* *deprecate: '< new_version'
+*/
+
 exports.default = {
-  abandonTransaction: { version: '>=0.12.0' },
-  abortRescan: { version: '>=0.15.0' },
-  addMultiSigAddress: { version: '>=0.1.0' },
-  addNode: { version: '>=0.8.0' },
-  addWitnessAddress: { version: '>=0.13.0' },
-  aliasAffiliates: { sysversion: '>=2.1.6' },
-  aliasAuthenticate: { sysversion: '>=2.1.6' },
-  aliasBalance: { sysversion: '>=2.1.6' },
-  aliasCount: { sysversion: '>=2.1.6' },
-  aliasFilter: { sysversion: '>=2.1.6' },
-  aliasHistory: { sysversion: '>=2.1.6' },
-  aliasInfo: { sysversion: '>=2.1.6' },
-  aliasList: { sysversion: '>=2.1.6' },
-  aliasNew: { sysversion: '>=2.1.6' },
-  aliasPay: { sysversion: '>=2.1.6' },
-  aliasUpdate: { sysversion: '>=2.1.6' },
-  backupWallet: { version: '>=0.3.12' },
-  bumpFee: { version: '>=0.14.0' },
-  certCount: { sysversion: '>=2.1.6' },
-  certFilter: { sysversion: '>=2.1.6' },
-  certHistory: { sysversion: '>=2.1.6' },
-  certInfo: { sysversion: '>=2.1.6' },
-  certList: { sysversion: '>=2.1.6' },
-  certNew: { sysversion: '>=2.1.6' },
-  certTransfer: { sysversion: '>=2.1.6' },
-  certUpdate: { sysversion: '>=2.1.6' },
-  clearBanned: { version: '>=0.12.0' },
-  combineRawTransaction: { version: '>=0.15.0' },
-  createMultiSig: { version: '>=0.1.0' },
-  createRawTransaction: { version: '>=0.7.0' },
-  createWitnessAddress: { version: '=0.13.0' },
-  decodeRawTransaction: { version: '>=0.7.0' },
-  decodeScript: { version: '>=0.9.0' },
-  disconnectNode: { version: '>=0.12.0' },
-  dumpPrivKey: {
-    obfuscate: {
-      response: () => '******'
+    aliasAddScript: { version: '>=2.2.0' },
+    aliasFilter: { version: '>=2.2.0' },
+    aliasHistory: { version: '>=2.2.0' },
+    aliasTxHistory: { version: '>=2.2.0' },
+    aliasUpdateWhitelist: { version: '>=2.2.0' },
+    aliasClearWhitelist: { version: '>=2.2.0' },
+    aliasWhitelist: { version: '>=2.2.0' },
+    aliasBalance: { version: '>=2.2.0' },
+    aliasInfo: { version: '>=2.2.0' },
+    aliasNew: { version: '>=2.2.0' },
+    aliasPay: { version: '>=2.2.0' },
+    aliasUpdate: { version: '>=2.2.0' },
+    addMultiSigAddress: { version: '>=2.2.0' },
+    assetAllocationInfo: { version: '>=3.0.0' },
+    assetAllocationSend: { version: '>=3.0.0' },
+    assetAllocationSenderStatus: { version: '>=3.0.0' },
+    assetInfo: { version: '>=3.0.0' },
+    assetNew: { version: '>=3.0.0' },
+    assetSend: { version: '>=3.0.0' },
+    assetTransfer: { version: '>=3.0.0' },
+    assetUpdate: { version: '>=3.0.0' },
+    certInfo: { version: '>=2.2.0' },
+    certFilter: { version: '>=2.2.0' },
+    certHistory: { version: '>=2.2.0' },
+    certNew: { version: '>=2.2.0' },
+    certTransfer: { version: '>=2.2.0' },
+    certUpdate: { version: '>=2.2.0' },
+    dumpHdInfo: { version: '>=3.0.0' },
+    escrowAcknowledge: { version: '>=2.2.0' },
+    escrowCreateRawTransaction: { version: '>=2.2.0' },
+    escrowCompleteRefund: { version: '>=2.2.0' },
+    escrowCompleteRelease: { version: '>=2.2.0' },
+    escrowFeedback: { version: '>=2.2.0' },
+    escrowFilter: { version: '>=2.2.0' },
+    escrowBidHistory: { version: '>=2.2.0' },
+    escrowFeedbackHistory: { version: '>=2.2.0' },
+    escrowInfo: { version: '>=2.2.0' },
+    escrowBid: { version: '>=2.2.0' },
+    escrowAddShipping: { version: '>=2.2.0' },
+    escrowNew: { version: '>=2.2.0' },
+    escrowRefund: { version: '>=2.2.0' },
+    escrowRelease: { version: '>=2.2.0' },
+    fundRawTransaction: { version: '>=3.0.0' },
+    getBlock: { version: '>=2.2.0' },
+    getBlockchainInfo: { version: '>=2.2.0' },
+    getBlockCount: { version: '>=2.2.0' },
+    getInfo: { version: '>=2.2.0' },
+    getMiningInfo: { version: '>=2.2.0' },
+    getNetworkInfo: { version: '>=2.2.0' },
+    getPeerInfo: { version: '>=2.2.0' },
+    verifyMessage: { version: '>=2.2.0' },
+    syscoinSendRawTransaction: { version: '>=2.2.0' },
+    syscoinDecodeRawTransaction: { version: '>=2.2.0' },
+    syscoinListReceivedByAddress: { version: '>=3.0.0' },
+    syscoinQuery: { version: '>=2.2.0' },
+    pruneSyscoinServices: { version: '>=2.2.0' },
+    dumpPrivKey: {
+        obfuscate: {
+            response: () => '******'
+        },
+        version: '>==2.2.0'
     },
-    version: '>=0.6.0'
-  },
-  dumpWallet: { version: '>=0.9.0' },
-  encryptWallet: {
-    obfuscate: {
-      request: params => (0, _lodash.set)([].concat(_toConsumableArray(params)), '[0]', '******')
+    dumpWallet: { version: '>==2.2.0' },
+    debug: { version: '>=3.0.0' },
+    encryptWallet: {
+        obfuscate: {
+            request: params => (0, _lodash.set)([].concat(_toConsumableArray(params)), '[0]', '******')
+        },
+        version: '>==2.2.0'
     },
-    version: '>=0.1.0'
-  },
-  escrowAcknowledge: { sysversion: '>=2.1.6' },
-  escrowClaimRefund: { sysversion: '>=2.1.6' },
-  escrowClaimRelease: { sysversion: '>=2.1.6' },
-  escrowCompleteRefund: { sysversion: '>=2.1.6' },
-  escrowCompleteRelease: { sysversion: '>=2.1.6' },
-  escrowCount: { sysversion: '>=2.1.6' },
-  escrowFeedback: { sysversion: '>=2.1.6' },
-  escrowFilter: { sysversion: '>=2.1.6' },
-  escrowHistory: { sysversion: '>=2.1.6' },
-  escrowInfo: { sysversion: '>=2.1.6' },
-  escrowList: { sysversion: '>=2.1.6' },
-  escrowNew: { sysversion: '>=2.1.6' },
-  escrowRefund: { sysversion: '>=2.1.6' },
-  escrowRelease: { sysversion: '>=2.1.6' },
-  estimateFee: { version: '>=0.10.0' },
-  estimatePriority: { version: '>=0.10.0 <0.15.0' },
-  estimateSmartFee: { version: '>=0.12.0' },
-  estimateSmartPriority: { version: '>=0.12.0 <0.15.0' },
-  fundRawTransaction: { version: '>=0.12.0' },
-  generate: { version: '>=0.11.0' },
-  generateEscrowMultisig: { sysversion: '>=2.1.6' },
-  generateToAddress: { version: '>=0.13.0' },
-  getAccount: { version: '>=0.1.0' },
-  getAccountAddress: { version: '>=0.3.18' },
-  getAddedNodeInfo: { version: '>=0.8.0' },
-  getAddressesByAccount: { version: '>=0.1.0' },
-  getAuxBlock: { sysversion: '>=2.1.6' },
-  getBalance: { version: '>=0.3.18' },
-  getBestBlockHash: { version: '>=0.9.0' },
-  getBlock: { version: '>=0.6.0' },
-  getBlockCount: { version: '>=0.1.0' },
-  getBlockHash: { version: '>=0.6.0' },
-  getBlockHeader: { version: '>=0.12.0' },
-  getBlockTemplate: { version: '>=0.7.0' },
-  getBlockchainInfo: { version: '>=0.9.2' },
-  getChainTips: { version: '>=0.10.0' },
-  getChainTxStats: { version: '>=0.15.0' },
-  getConnectionCount: { version: '>=0.1.0' },
-  getDifficulty: { version: '>=0.1.0' },
-  getGenerate: { version: '<0.13.0' },
-  getHashesPerSec: { version: '<0.10.0' },
-  getInfo: { version: '>=0.1.0' },
-  getMemoryInfo: { version: '>=0.14.0' },
-  getMempoolAncestors: { version: '>=0.13.0' },
-  getMempoolDescendants: { version: '>=0.13.0' },
-  getMempoolEntry: { version: '>=0.13.0' },
-  getMempoolInfo: { version: '>=0.10.0' },
-  getMiningInfo: { version: '>=0.6.0' },
-  getNetTotals: { version: '>=0.1.0' },
-  getNetworkHashPs: { version: '>=0.9.0' },
-  getNetworkInfo: { version: '>=0.9.2' },
-  getNewAddress: { version: '>=0.1.0' },
-  getPeerInfo: { version: '>=0.7.0' },
-  getRawChangeAddress: { version: '>=0.9.0' },
-  getRawMempool: { version: '>=0.7.0' },
-  getRawTransaction: { version: '>=0.7.0' },
-  getReceivedByAccount: { version: '>=0.1.0' },
-  getReceivedByAddress: { version: '>=0.1.0' },
-  getTransaction: { version: '>=0.1.0' },
-  getTxOut: { version: '>=0.7.0' },
-  getTxOutProof: { version: '>=0.11.0' },
-  getTxOutSetInfo: { version: '>=0.7.0' },
-  getUnconfirmedBalance: { version: '>=0.9.0' },
-  getV2Address: { sysversion: '>=2.1.6' },
-  getWalletBalance: { sysversion: '>=2.1.6' },
-  getWalletInfo: { version: '>=0.9.2' },
-  getWork: { version: '<0.10.0' },
-  getZAddress: { sysversion: '>=2.1.6' },
-  help: { version: '>=0.1.0' },
-  importAddress: { version: '>=0.10.0' },
-  importMulti: {
-    obfuscate: {
-      request: params => (0, _lodash.set)(params, '[0]', (0, _lodash.map)(params[0], request => (0, _lodash.set)(request, 'keys', (0, _lodash.map)(request.keys, () => '******'))))
+    getAddressDeltas: { version: '>=3.0.0' },
+    getAccount: { version: '>=2.2.0' },
+    getAccountAddress: { version: '>=2.2.0' },
+    getAddressBalance: { version: '>=2.2.0' },
+    getAddressUtxos: { version: '>=2.2.0' },
+    getAddressMempool: { version: '>=3.0.0' },
+    getAddressTxids: { version: '>=3.0.0' },
+    getBlockHashes: { version: '>=3.0.0' },
+    getBlockHeaders: { version: '>=3.0.0' },
+    getChainTips: { version: '>=3.0.0' },
+    getSpentInfo: { version: '>=3.0.0' },
+    getGenerate: { version: '>=3.0.0' },
+    getGovernanceInfo: { version: '>=3.0.0' },
+    getPoolInfo: { version: '>=3.0.0' },
+    getSuperBlockBudget: { version: '>=3.0.0' },
+    getBalance: { version: '>=2.2.0' },
+    getWalletBalance: { version: '>=2.2.0' },
+    getNewAddress: { version: '>=2.2.0' },
+    getReceivedByAccount: { version: '>=2.2.0' },
+    getReceivedByAddress: { version: '>=2.2.0' },
+    getTransaction: { version: '>=2.2.0' },
+    getUnconfirmedBalance: { version: '>=2.2.0' },
+    getWalletInfo: { version: '>=2.2.0' },
+    getBlockTemplate: { version: '>=3.0.0' },
+    gObject: { version: '>=3.0.0' },
+    importElectrumWallet: { version: '>=3.0.0' },
+    importAddress: { version: '>=2.2.0' },
+    importPrivKey: {
+        obfuscate: {
+            request: () => ['******']
+        },
+        version: '>==2.2.0'
     },
-    version: '>=0.14.0'
-  },
-  importPrivKey: {
-    obfuscate: {
-      request: () => ['******']
+    importPubKey: { version: '>=2.2.0' },
+    importWallet: { version: '>=2.2.0' },
+    instantSendToAddress: { version: '>=3.0.0' },
+    keepass: { version: '>=3.0.0' },
+    lockUnspent: { version: '>=3.0.0' },
+    listAccounts: { version: '>=2.2.0' },
+    listAddressGroupings: { version: '>=2.2.0' },
+    listReceivedByAccount: { version: '>=2.2.0' },
+    listReceivedByAddress: { version: '>=2.2.0' },
+    listSinceBlock: { version: '>=2.2.0' },
+    listTransactions: { version: '>=2.2.0' },
+    listUnspent: { version: '>=3.0.0' },
+    masternode: { version: '>=3.0.0' },
+    masternodeBroadcast: { version: '>=3.0.0' },
+    masternodeList: { version: '>=3.0.0' },
+    mnSync: { version: '>=3.0.0' },
+    offerInfo: { version: '>=2.2.0' },
+    offerHistory: { version: '>=2.2.0' },
+    offerFilter: { version: '>=2.2.0' },
+    offerLink: { version: '>=2.2.0' },
+    offerNew: { version: '>=2.2.0' },
+    offerUpdate: { version: '>=2.2.0' },
+    privateSend: { version: '>=3.0.0' },
+    sentinelPing: { version: '>=3.0.0' },
+    spork: { version: '>=3.0.0' },
+    sendRawTransaction: { version: '>=3.0.0' },
+    setGenerate: { version: '>=3.0.0' },
+    setNetworkActive: { version: '>=3.0.0' },
+    sendFrom: { version: '>=2.2.0' },
+    sendMany: { version: '>=2.2.0' },
+    sendToAddress: { version: '>=2.2.0' },
+    signMessage: { version: '>=2.2.0' },
+    validateAddress: { version: '>=2.2.0' },
+    voteraw: { version: '>=3.0.0' },
+    walletLock: { version: '>=2.2.0' },
+    walletPassphrase: {
+        obfuscate: {
+            request: params => (0, _lodash.set)([].concat(_toConsumableArray(params)), '[0]', '******')
+        },
+        version: '>==2.2.0'
     },
-    version: '>=0.6.0'
-  },
-  importPrunedFunds: { version: '>=0.13.0' },
-  importPubKey: { version: '>=0.12.0' },
-  importWallet: { version: '>=0.9.0' },
-  keypoolRefill: { version: '>=0.1.0' },
-  listAccounts: { version: '>=0.1.0' },
-  listAddressGroupings: { version: '>=0.7.0' },
-  listBanned: { version: '>=0.12.0' },
-  listLockUnspent: { version: '>=0.8.0' },
-  listReceivedByAccount: { version: '>=0.1.0' },
-  listReceivedByAddress: { version: '>=0.1.0' },
-  listSinceBlock: { version: '>=0.5.0' },
-  listTransactions: { version: '>=0.3.18' },
-  listUnspent: { version: '>=0.7.0' },
-  listWallets: { version: '>=0.15.0' },
-  lockUnspent: { version: '>=0.8.0' },
-  messageInfo: { sysversion: '>=2.1.6' },
-  messageNew: { sysversion: '>=2.1.6' },
-  messageReceiveCount: { sysversion: '>=2.1.6' },
-  messageReceiveList: { sysversion: '>=2.1.6' },
-  messageSentCount: { sysversion: '>=2.1.6' },
-  messageSentList: { sysversion: '>=2.1.6' },
-  move: { version: '>=0.3.18' },
-  offerAccept: { sysversion: '>=2.1.6' },
-  offerAcceptAcknowledge: { sysversion: '>=2.1.6' },
-  offerAcceptCount: { sysversion: '>=2.1.6' },
-  offerAcceptFeedback: { sysversion: '>=2.1.6' },
-  offerAcceptList: { sysversion: '>=2.1.6' },
-  offerAddWhitelist: { sysversion: '>=2.1.6' },
-  offerClearWhitelist: { sysversion: '>=2.1.6' },
-  offerCount: { sysversion: '>=2.1.6' },
-  offerFilter: { sysversion: '>=2.1.6' },
-  offerHistory: { sysversion: '>=2.1.6' },
-  offerInfo: { sysversion: '>=2.1.6' },
-  offerLink: { sysversion: '>=2.1.6' },
-  offerList: { sysversion: '>=2.1.6' },
-  offerNew: { sysversion: '>=2.1.6' },
-  offerRemoveWhitelist: { sysversion: '>=2.1.6' },
-  offerUpdate: { sysversion: '>=2.1.6' },
-  offerWhitelist: { sysversion: '>=2.1.6' },
-  ping: { version: '>=0.9.0' },
-  preciousBlock: { version: '>=0.14.0' },
-  prioritiseTransaction: { version: '>=0.10.0' },
-  pruneBlockchain: { version: '>=0.14.0' },
-  removePrunedFunds: { version: '>=0.13.0' },
-  sendFrom: { version: '>=0.3.18' },
-  sendMany: { version: '>=0.3.21' },
-  sendRawTransaction: { version: '>=0.7.0' },
-  sendToAddress: { version: '>=0.1.0' },
-  setAccount: { version: '>=0.1.0' },
-  setBan: { version: '>=0.12.0' },
-  setGenerate: { version: '<0.13.0' },
-  setNetworkActive: { version: '>=0.14.0' },
-  setTxFee: { version: '>=0.3.22' },
-  signMessage: { version: '>=0.5.0' },
-  signMessageWithPrivKey: {
-    obfuscate: {
-      request: params => (0, _lodash.set)([].concat(_toConsumableArray(params)), '[0]', '******')
-    },
-    version: '>=0.13.0'
-  },
-  signRawTransaction: {
-    obfuscate: {
-      request: params => (0, _lodash.set)([].concat(_toConsumableArray(params)), '[2]', (0, _lodash.map)(params[2], () => '******'))
-    },
-    version: '>=0.7.0'
-  },
-  stop: { version: '>=0.1.0' },
-  submitBlock: { version: '>=0.7.0' },
-  syscoinDecodeRawTransaction: { sysversion: '>=2.1.6' },
-  syscoinListReceivedByAddress: { version: '>=2.2.0' },
-  syscoinSignRawTransaction: { sysversion: '>=2.1.6' },
-  upTime: { version: '>=0.15.0' },
-  validateAddress: { version: '>=0.3.14' },
-  verifyChain: { version: '>=0.9.0' },
-  verifyMessage: { version: '>=0.5.0' },
-  verifyTxOutProof: { version: '>0.11.0' },
-  walletLock: { version: '>=0.1.0' },
-  walletPassphrase: {
-    obfuscate: {
-      request: params => (0, _lodash.set)([].concat(_toConsumableArray(params)), '[0]', '******')
-    },
-    version: '>=0.1.0'
-  },
-  walletPassphraseChange: { version: '>=0.1.0' }
+    walletPassphraseChange: { version: '>=2.2.0' }
 };
 module.exports = exports['default'];
