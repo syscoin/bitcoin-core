@@ -48,14 +48,14 @@ export default {
     obfuscate: {
       response: () => '******'
     },
-    version: '>==2.2.0'
+    version: '>=2.2.0'
   },
-  dumpWallet: { version: '>==2.2.0' },
+  dumpWallet: { version: '>=2.2.0' },
   encryptWallet: {
     obfuscate: {
       request: params => set([...params], '[0]', '******')
     },
-    version: '>==2.2.0'
+    version: '>=2.2.0'
   },
   escrowAcknowledge: { version: '>=2.2.0' },
   escrowAddShipping: { version: '>=2.2.0' },
@@ -116,7 +116,7 @@ export default {
     obfuscate: {
       request: () => ['******']
     },
-    version: '>==2.2.0'
+    version: '>=2.2.0'
   },
   importPubKey: { version: '>=2.2.0' },
   importWallet: { version: '>=2.2.0' },
@@ -158,7 +158,7 @@ export default {
     obfuscate: {
       request: params => set([...params], '[0]', '******')
     },
-    version: '>==2.2.0'
+    version: '>=2.2.0'
   },
   walletPassphraseChange: { version: '>=2.2.0' }
 };
