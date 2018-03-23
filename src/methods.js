@@ -9,9 +9,9 @@ import { set } from 'lodash';
  * @Dev
  * follow the versioning rule below
  * to update changes:
- * *new : '>= new_version'
- * *changed: '>= new_version'
- * *deprecate: '< new_version'
+ * *new as of version : '>= new_version'
+ * *removed as of version: '< new_version'
+ * *existed for version range: '>= start_version < end_version'
  */
 
 export default {
@@ -19,10 +19,11 @@ export default {
   aliasAddScript: { version: '>=2.2.0' },
   aliasBalance: { version: '>=2.2.0' },
   aliasClearWhitelist: { version: '>=2.2.0' },
+  aliasCount: { version: '>=2.2.0 <3.0.0' },
   aliasFilter: { version: '>=2.2.0' },
   aliasHistory: { version: '>=2.2.0' },
   aliasInfo: { version: '>=2.2.0' },
-  aliasList: { version: '>=2.2.0' },
+  aliasList: { version: '>=2.2.0 <3.0.0',  },
   aliasNew: { version: '>=2.2.0' },
   aliasPay: { version: '>=3.0.0' },
   aliasTxHistory: { version: '>=2.2.0' },
