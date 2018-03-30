@@ -16,6 +16,7 @@ import { set } from 'lodash';
 
 export default {
   addMultiSigAddress: { version: '>=2.2.0' },
+  aliasNewFund: { version: '>=3.0.0' },
   aliasAddScript: { version: '>=2.2.0' },
   aliasBalance: { version: '>=2.2.0' },
   aliasClearWhitelist: { version: '>=2.2.0' },
