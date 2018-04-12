@@ -83,6 +83,7 @@ export default {
   getNetworkInfo: { version: '>=2.2.0' },
   getPeerInfo: { version: '>=2.2.0' },
   pruneSyscoinServices: { version: '>=2.2.0' },
+  signRawTransaction: { version: '>=2.2.0'},
   syscoinDecodeRawTransaction: { version: '>=2.2.0' },
   syscoinListReceivedByAddress: { version: '>=3.0.0' },
   syscoinQuery: { version: '>=2.2.0' },
