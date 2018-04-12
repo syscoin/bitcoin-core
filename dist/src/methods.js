@@ -24,6 +24,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
 exports.default = {
   addMultiSigAddress: { version: '>=2.2.0' },
+  aliasNewFund: { version: '>=3.0.0' },
   aliasAddScript: { version: '>=2.2.0' },
   aliasBalance: { version: '>=2.2.0' },
   aliasClearWhitelist: { version: '>=2.2.0' },
