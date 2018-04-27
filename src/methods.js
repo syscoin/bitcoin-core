@@ -31,6 +31,7 @@ export default {
   aliasUpdate: { version: '>=2.2.0' },
   aliasUpdateWhitelist: { version: '>=2.2.0' },
   aliasWhitelist: { version: '>=2.2.0' },
+  assetAllocationCollectInterest: { version: '>=3.0.0' },
   assetAllocationInfo: { version: '>=3.0.0' },
   assetAllocationSend: { version: '>=3.0.0' },
   assetAllocationSenderStatus: { version: '>=3.0.0' },
