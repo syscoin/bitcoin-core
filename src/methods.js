@@ -16,7 +16,6 @@ import { set } from 'lodash';
 
 export default {
   addMultiSigAddress: { version: '>=2.2.0' },
-  aliasNewFund: { version: '>=3.0.0' },
   aliasAddScript: { version: '>=2.2.0' },
   aliasBalance: { version: '>=2.2.0' },
   aliasClearWhitelist: { version: '>=2.2.0' },
@@ -156,6 +155,7 @@ export default {
   sendToAddress: { version: '>=2.2.0' },
   signMessage: { version: '>=2.2.0' },
   syscoinListReceiveByAddress: { version: '>=3.0.0' },
+  syscoinTxFund: { version: '>=3.0.0' },
   validateAddress: { version: '>=2.2.0' },
   voteRaw: { version: '>=3.0.0' },
   walletLock: { version: '>=2.2.0' },
