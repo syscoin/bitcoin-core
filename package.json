@@ -1,5 +1,5 @@
 {
-  "name": "@syscoinorg/syscoin-core",
+  "name": "@syscoin/syscoin-core",
   "version": "3.0.0-beta",
   "description": "A modern Syscoin Core REST and RPC client.",
   "keywords": [
