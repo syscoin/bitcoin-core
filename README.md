@@ -2,7 +2,7 @@
 A modern Syscoin Core REST and RPC client to execute administrative tasks, wallet operations and queries about network and the blockchain.
 
 ## Status
-[![npm version][npm-image]][npm-url] [![build status][travis-image]][travis-url]
+[![npm version][npm-image]][npm-url] [![Build Status](https://travis-ci.org/syscoin/syscoin-core.svg?branch=dev-3.0)](https://travis-ci.org/syscoin/syscoin-core)
 
 ## Installation
 Install the package via `npm`:
