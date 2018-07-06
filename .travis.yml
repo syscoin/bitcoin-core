@@ -1,7 +1,18 @@
+# Allow sudo access apt installation
+sudo: required
+
+# bash
 language: bash
-
-script:
-  - docker-compose run --rm sut
-
+# Docker service package 
 services:
   - docker
+
+# Before installtion package need to update
+# install docker
+before_install:
+- sudo apt-get update
+- sudo apt-get --yes --option Dpkg::Options::="--force-confnew" install docker-ce
+
+# run docker compose 
+script:
+  - docker-compose run --rm sut
