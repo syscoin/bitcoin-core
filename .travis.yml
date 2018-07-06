@@ -15,4 +15,5 @@ before_install:
 
 # run docker compose 
 script:
-  - docker-compose run --rm sut
+  #- docker-compose run --rm sut
+  - npm run testdocker
