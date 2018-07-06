@@ -19,18 +19,18 @@ const config = {
   syscoind: {
     host: getHost('syscoind'),
     password: 'p',
-    port: 8336,
+    port: 8368,
     username: 'u'
   },
   syscoindSsl: {
     host: getHost('syscoind-ssl'),
     password: 'p',
-    port: 8336,
+    port: 8368,
     username: 'u'
   },
   syscoindUsernameOnly: {
     host: getHost('syscoind-username-only'),
-    port: 8336,
+    port: 8368,
     username: 'u'
   }
 };
