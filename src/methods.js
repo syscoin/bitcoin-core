@@ -16,6 +16,7 @@ import { set } from 'lodash';
 
 export default {
   addMultiSigAddress: { version: '>=2.2.0' },
+  addNode: { version: '>=2.2.0' },
   aliasAddScript: { version: '>=2.2.0' },
   aliasBalance: { version: '>=2.2.0' },
   aliasBalanceMulti: { version: '>=3.0.5' },
@@ -24,7 +25,7 @@ export default {
   aliasFilter: { version: '>=2.2.0' },
   aliasHistory: { version: '>=2.2.0' },
   aliasInfo: { version: '>=2.2.0' },
-  aliasList: { version: '>=2.2.0 <3.0.0',  },
+  aliasList: { version: '>=2.2.0 <3.0.0' },
   aliasNew: { version: '>=2.2.0' },
   aliasPay: { version: '>=3.0.0' },
   aliasTxHistory: { version: '>=2.2.0' },
@@ -112,7 +113,7 @@ export default {
   importAddress: { version: '>=2.2.0' },
   importElectrumWallet: { version: '>=3.0.0' },
   pruneSyscoinServices: { version: '>=2.2.0' },
-  signRawTransaction: { version: '>=2.2.0'},
+  signRawTransaction: { version: '>=2.2.0' },
   syscoinDecodeRawTransaction: { version: '>=2.2.0' },
   syscoinListReceivedByAddress: { version: '>=3.0.0' },
   syscoinQuery: { version: '>=2.2.0' },
