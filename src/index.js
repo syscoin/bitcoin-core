@@ -34,9 +34,9 @@ function source(...args) {
  */
 
 const networks = {
-  mainnet: 8332,
-  regtest: 18332,
-  testnet: 18332
+  mainnet: 8236,
+  regtest: 18236,
+  testnet: 18236
 };
 
 /**
