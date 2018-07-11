@@ -29,6 +29,12 @@ afterEach(() => {
 describe('Client', () => {
   const client = new Client(config.syscoind);
 
+  const ports = {
+    mainnet: 8370,
+    regtest: 18370,
+    testnet: 18370
+  };
+
   describe('constructor', () => {
     it('should throw an error if network is invalid', () => {
       try {
@@ -58,19 +64,19 @@ describe('Client', () => {
     });
 
     it('should have default port set to `mainnet`\'s one', () => {
-      new Client().port.should.equal(8332);
+      new Client().port.should.equal(ports.mainnet);
     });
 
-    it('should set default to port `8332` if network is `mainnet`', () => {
-      new Client({ network: 'mainnet' }).port.should.equal(8332);
+    it(`should set default to port \`${ports.mainnet}\` if network is \`mainnet\``, () => {
+      new Client({ network: 'mainnet' }).port.should.equal(ports.mainnet);
     });
 
-    it('should set default to port `18332` if network is `testnet`', () => {
-      new Client({ network: 'testnet' }).port.should.equal(18332);
+    it(`should set default to port \`${ports.testnet}\` if network is \`testnet\``, () => {
+      new Client({ network: 'testnet' }).port.should.equal(ports.testnet);
     });
 
-    it('should set default to port `18332` if network is `regtest`', () => {
-      new Client({ network: 'regtest' }).port.should.equal(18332);
+    it(`should set default to port \`${ports.regtest}\` if network is \`regtest\``, () => {
+      new Client({ network: 'regtest' }).port.should.equal(ports.regtest);
     });
 
     it('should not have ssl enabled by default', () => {
