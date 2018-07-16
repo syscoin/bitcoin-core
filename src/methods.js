@@ -155,6 +155,7 @@ export default {
   sendFrom: { version: '>=2.2.0' },
   sendMany: { version: '>=2.2.0' },
   sendToAddress: { version: '>=2.2.0' },
+  setBan: { version: '>=2.2.0' },
   signMessage: { version: '>=2.2.0' },
   syscoinListReceiveByAddress: { version: '>=3.0.0' },
   syscoinTxFund: { version: '>=3.0.0' },
