@@ -148,6 +148,7 @@ export default {
   offerNew: { version: '>=2.2.0' },
   offerUpdate: { version: '>=2.2.0' },
   privateSend: { version: '>=3.0.0' },
+  resendWalletTransactions: { version: '>=3.0.0' },
   sentinelPing: { version: '>=3.0.0' },
   spork: { version: '>=3.0.0' },
   sendRawTransaction: { version: '>=3.0.0' },
