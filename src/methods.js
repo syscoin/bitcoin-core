@@ -81,6 +81,7 @@ export default {
   getBlockHash: { version: '>=2.2.0' },
   getBlockchainInfo: { version: '>=2.2.0' },
   getInfo: { version: '>=2.2.0' },
+  getMemPoolInfo: { version: '>=2.2.0' },
   getDifficulty: { version: '>=2.2.0' },
   getMiningInfo: { version: '>=2.2.0' },
   getNetworkInfo: { version: '>=2.2.0' },
