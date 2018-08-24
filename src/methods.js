@@ -79,6 +79,7 @@ export default {
   getBlock: { version: '>=2.2.0' },
   getBlockCount: { version: '>=2.2.0' },
   getBlockHash: { version: '>=2.2.0' },
+  getDifficulty: { version: '>=2.2.0' },
   getBlockchainInfo: { version: '>=2.2.0' },
   getInfo: { version: '>=2.2.0' },
   getMiningInfo: { version: '>=2.2.0' },
